@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal STIE Pancasetia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ac1234;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* dot grid pattern overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.07) 1px, transparent 0);
+            background-size: 28px 28px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .wrapper {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 680px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .logo-ring {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.13);
+            border: 2px solid rgba(255, 255, 255, 0.28);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .logo-ring svg {
+            width: 32px;
+            height: 32px;
+            stroke: white;
+            fill: none;
+            stroke-width: 1.8;
+        }
+
+        .header h1 {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .header p {
+            color: rgb(255, 255, 255);
+            font-size: 0.78rem;
+            margin-top: 5px;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        /* Card */
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 26px 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: transform 0.25s cubic-bezier(.175, .885, .32, 1.275),
+                box-shadow 0.25s ease,
+                background 0.2s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+        }
+
+        .card:hover {
+            transform: translateY(-7px) scale(1.04);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+            background: #fff5f7;
+        }
+
+        .card:active {
+            transform: scale(0.96);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-icon svg {
+            width: 64px;
+            height: 64px;
+            stroke: #ac1234;
+            fill: none;
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .card-name {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #ac1234;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+        }
+
+        .card-desc {
+            font-size: 0.65rem;
+            color: #000000;
+            font-weight: 400;
+            line-height: 1.45;
+            margin-top: -4px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.7rem;
+        }
+
+        .footer a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 520px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .header h1 {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-ring">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+            </div>
+            <h1>SIP</h1>
+            <p>Sistem Informasi Pancasetia</p>
+        </div>
+
+        <!-- Grid Portal -->
+        <div class="grid">
+
+            <!-- SISTER -->
+            <a class="card" href="https://sister.stiepancasetia.ac.id/" target="_blank" rel="noopener">
+                <div class="card-icon">
+                    <svg viewBox="0 0 64 64">
+                        <circle cx="32" cy="20" r="10" />
+                        <path d="M12 56c0-11.05 8.95-20 20-20s20 8.95 20 20" />
+                    </svg>
+                </div>
+                <div class="card-name">SISTER</div>
+                <div class="card-desc">Sistem Informasi Sumber Daya Terintegrasi</div>
+            </a>
+
+            <!-- SIPERU -->
+            <a class="card" href="https://siperu.stiepancasetia.ac.id/" target="_blank" rel="noopener">
+                <div class="card-icon">
+                    <svg viewBox="0 0 64 64">
+                        <rect x="8" y="10" width="48" height="34" rx="4" />
+                        <line x1="8" y1="34" x2="56" y2="34" />
+                        <line x1="24" y1="44" x2="21" y2="54" />
+                        <line x1="40" y1="44" x2="43" y2="54" />
+                        <line x1="17" y1="54" x2="47" y2="54" />
+                        <polyline points="22,22 28,28 22,34" />
+                        <line x1="32" y1="28" x2="42" y2="28" />
+                    </svg>
+                </div>
+                <div class="card-name">SIPERU</div>
+                <div class="card-desc">Sistem Informasi Peminjaman Ruangan</div>
+            </a>
+
+            <!-- LPPM -->
+            <a class="card" href="https://lppm.stiepancasetia.ac.id/" target="_blank" rel="noopener">
+                <div class="card-icon">
+                    <svg viewBox="0 0 64 64">
+                        <path
+                            d="M32 14 C32 14 18 10 8 12 L8 52 C18 50 32 54 32 54 C32 54 46 50 56 52 L56 12 C46 10 32 14 32 14Z" />
+                        <line x1="32" y1="14" x2="32" y2="54" />
+                        <line x1="14" y1="22" x2="28" y2="20" />
+                        <line x1="14" y1="30" x2="28" y2="28" />
+                        <line x1="14" y1="38" x2="28" y2="36" />
+                        <line x1="36" y1="20" x2="50" y2="22" />
+                        <line x1="36" y1="28" x2="50" y2="30" />
+                        <line x1="36" y1="36" x2="50" y2="38" />
+                    </svg>
+                </div>
+                <div class="card-name">LPPM</div>
+                <div class="card-desc">Lembaga Penelitian & Pengabdian Masyarakat</div>
+            </a>
+
+            <!-- Satgas PPKS -->
+            <a class="card" href="https://ppkpt.stiepancasetia.ac.id/" target="_blank" rel="noopener">
+                <div class="card-icon">
+                    <svg viewBox="0 0 64 64">
+                        <path d="M32 6 L56 14 L56 34 C56 47 45 56 32 60 C19 56 8 47 8 34 L8 14 Z" />
+                        <polyline points="22,32 29,40 44,24" />
+                    </svg>
+                </div>
+                <div class="card-name">SATGAS PPKS</div>
+                <div class="card-desc">Pencegahan & Penanganan Kekerasan Seksual</div>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p> <a href="https://stiepancasetia.ac.id" target="_blank">© 2026 IT STIE Pancasetia</a></p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
